@@ -2,6 +2,7 @@ package com.exampledemoproject.UserVaccinationService.Entity;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,11 +18,13 @@ public class Citizen {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @Column
+    @NotNull @NotBlank
+    @Column(name = "citizen_name")
     private String name;
 
 
-    @Column
+    @NotNull @Min(1)
+    @Column(name = "vaccinationCenter_id")
     private int vaccinationCenterId;
 
 

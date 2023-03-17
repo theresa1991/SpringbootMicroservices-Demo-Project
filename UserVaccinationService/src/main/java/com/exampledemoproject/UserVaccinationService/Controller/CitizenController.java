@@ -3,6 +3,7 @@ package com.exampledemoproject.UserVaccinationService.Controller;
 
 import com.exampledemoproject.UserVaccinationService.Entity.Citizen;
 import com.exampledemoproject.UserVaccinationService.Service.CitizenService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +20,7 @@ public class CitizenController {
     private CitizenService citizenService;
 
     @PostMapping("citizen/add")
-    public ResponseEntity<Citizen> addCitizen(@RequestBody Citizen citizen){
-
+    public ResponseEntity<Citizen> addCitizen(@RequestBody @Valid Citizen citizen){
         Citizen citizenNew=citizenService.addCitizen(citizen);
         return new ResponseEntity<>(citizenNew, HttpStatus.OK);
     }
@@ -35,6 +35,5 @@ public class CitizenController {
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        //return new ResponseEntity<>(citizenList,HttpStatus.OK);
     }
 }

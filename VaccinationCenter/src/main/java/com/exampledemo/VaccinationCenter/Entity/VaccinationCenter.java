@@ -1,7 +1,11 @@
 package com.exampledemo.VaccinationCenter.Entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -9,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class VaccinationCenter {
 
 
@@ -17,9 +22,11 @@ public class VaccinationCenter {
     private  int id;
 
 
-    @Column
+    @NotNull @NotBlank
+    @Column(name = "center_name")
     private String CenterName;
 
-    @Column
+    @NotNull @NotBlank
+    @Column(name = "center_address")
     private String centerAddress;
 }
