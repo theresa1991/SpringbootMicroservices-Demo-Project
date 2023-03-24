@@ -13,7 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 public class RequiredResponse {
 
-
     private VaccinationCenter center;
     private List<Citizen> citizens;
 }

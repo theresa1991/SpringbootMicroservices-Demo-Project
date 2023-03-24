@@ -8,6 +8,6 @@ import java.util.List;
 
 
 @Repository
-public interface CitizenRepository extends JpaRepository<Citizen,Integer> {
+public interface CitizenRepository extends JpaRepository<Citizen, Integer> {
     List<Citizen> findByVaccinationCenterId(Integer id);
 }

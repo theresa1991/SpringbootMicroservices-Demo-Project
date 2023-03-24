@@ -6,14 +6,11 @@ import com.exampledemo.VaccinationCenter.Service.VaccinationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class VaccinationServiceImpl implements VaccinationService {
-
-
     @Autowired
     private VaccinationCenterRepository vaccinationCenterRepository;
+
     @Override
     public VaccinationCenter addCitizen(VaccinationCenter vaccinationCenter) {
         return vaccinationCenterRepository.save(vaccinationCenter);

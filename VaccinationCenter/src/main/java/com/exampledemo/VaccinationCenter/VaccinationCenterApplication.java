@@ -10,12 +10,12 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 public class VaccinationCenterApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(VaccinationCenterApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(VaccinationCenterApplication.class, args);
+    }
 
-	@Bean
-	public RestTemplate getRestTemplate(){
-		return new RestTemplate();
-	}
+    @Bean
+    public RestTemplate getRestTemplate() {
+        return new RestTemplate();
+    }
 }

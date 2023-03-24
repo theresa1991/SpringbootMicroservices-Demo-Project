@@ -12,24 +12,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-
-
 public class CitizenController {
-
     @Autowired
     private CitizenService citizenService;
 
     @PostMapping("citizen/add")
-    public ResponseEntity<Citizen> addCitizen(@RequestBody @Valid Citizen citizen){
-        Citizen citizenNew=citizenService.addCitizen(citizen);
+    public ResponseEntity<Citizen> addCitizen(@RequestBody @Valid Citizen citizen) {
+        Citizen citizenNew = citizenService.addCitizen(citizen);
         return new ResponseEntity<>(citizenNew, HttpStatus.OK);
     }
 
-
     @GetMapping("citizen/id/{id}")
-    public ResponseEntity<List<Citizen>> getCitizenById(@PathVariable Integer id){
-        List<Citizen> citizenList=citizenService.getCitizenById(id);
-
+    public ResponseEntity<List<Citizen>> getCitizenById(@PathVariable Integer id) {
+        List<Citizen> citizenList = citizenService.getCitizenById(id);
         if (citizenList != null && !citizenList.isEmpty()) {
             return new ResponseEntity<>(citizenList, HttpStatus.OK);
         } else {
